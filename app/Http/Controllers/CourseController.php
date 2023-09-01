@@ -21,4 +21,18 @@ class CourseController extends Controller
             'course' => $course
         ]);
     }
+
+    public function store(Request $request) {
+        // dd($request);
+        $formsFields = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+        ]);
+
+        $course = Course::create($formsFields);
+
+        // return redirect('/courses');
+        return redirect()->route('course.show', $course);
+    }
 }
