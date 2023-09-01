@@ -25,7 +25,7 @@ class CourseController extends Controller
     public function store(Request $request) {
         // dd($request);
         $formsFields = $request->validate([
-            'name' => 'required',
+            'name' => 'required|max:20',
             'description' => 'required',
             'category' => 'required',
         ]);
