@@ -19,7 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
-Route::get('/course/{course}', [CourseController::class, 'show'])->name('course.show');
+Route::get('/courses/{course}', [CourseController::class, 'show'])->name('course.show');
 Route::get('/courses/create', [CourseController::class, 'create'])->name('course.create');
-Route::post('courses', [CourseController::class, 'store'])->name('courses.store');
+Route::post('/courses', [CourseController::class, 'store'])->name('courses.store');
+Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit');
+Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
+
 // Route::resource('courses', CourseController::class)->only(['index', 'show', 'create']);

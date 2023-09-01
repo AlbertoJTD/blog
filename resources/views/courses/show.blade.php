@@ -4,6 +4,8 @@
 
 @section('content')
   <a href="{{ route('courses.index') }}">Back to Courses</a>
+  <a href="{{ route('courses.edit', $course) }}">Edit</a>
+
   <h1>Show view: {{ $course->id }}</h1>
   <p><strong>Name: </strong> {{ $course->name }}</p>
   <p><strong>Description: </strong> {{ $course->description }}</p>

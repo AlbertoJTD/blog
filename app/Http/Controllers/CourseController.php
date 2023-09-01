@@ -35,4 +35,22 @@ class CourseController extends Controller
         // return redirect('/courses');
         return redirect()->route('course.show', $course);
     }
+
+    public function edit(Course $course) {
+        return view('courses.edit', [
+            'course' => $course
+        ]);
+    }
+
+    public function update(Request $request, Course $course) {
+        $formsFields = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'category' => 'required',
+        ]);
+
+        $course->update($formsFields);
+
+        return redirect()->route('course.show', $course);
+    }
 }
