@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/courses', [CourseController::class, 'index']);
-Route::get('/course/{course}', [CourseController::class, 'show']);
-Route::get('/courses/create', [CourseController::class, 'create']);
+Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+Route::get('/course/{course}', [CourseController::class, 'show'])->name('course.show');
+Route::get('/courses/create', [CourseController::class, 'create'])->name('course.create');
 
 // Route::resource('courses', CourseController::class)->only(['index', 'show', 'create']);
