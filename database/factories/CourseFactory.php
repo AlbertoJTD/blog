@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,10 @@ class CourseFactory extends Factory
      */
     public function definition(): array
     {
+        $name = $this->faker->sentence();
         return [
-            'name' => $this->faker->text(),
+            'name' => $name,
+            'slug' => Str::slug($name , '-'),
             'description' => $this->faker->paragraph(),
             'category' => $this->faker->randomElement(['Php', 'Backend', 'Laravel', 'MySQL', 'Web Developer'])
         ];

@@ -10,4 +10,9 @@ class Course extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'description', 'category'];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

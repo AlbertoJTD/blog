@@ -4,11 +4,11 @@
 
 @section('content')
   <h1>Welcome to the main page</h1>
-  <a href="{{ route('course.create') }}" class="bg-teal-100 mb-5">Create new course</a>
+  <a href="{{ route('courses.create') }}" class="bg-teal-100 mb-5">Create new course</a>
   <ul>
     @foreach ($courses as $course)
         <li>
-          <a href="{{ route('course.show', $course->id) }}">{{ $course->name }}</a>
+          <a href="{{ route('courses.show', $course) }}">{{ $course->name }}</a>
         </li>
     @endforeach
 

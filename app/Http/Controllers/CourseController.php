@@ -29,7 +29,7 @@ class CourseController extends Controller
         $course = Course::create($formFields);
 
         // return redirect('/courses');
-        return redirect()->route('course.show', $course);
+        return redirect()->route('courses.show', $course);
     }
 
     public function edit(Course $course) {
@@ -47,7 +47,7 @@ class CourseController extends Controller
 
         $course->update($formsFields);
 
-        return redirect()->route('course.show', $course);
+        return redirect()->route('courses.show', $course);
     }
 
     public function destroy(Course $course) {
