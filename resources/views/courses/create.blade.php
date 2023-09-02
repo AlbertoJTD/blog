@@ -7,21 +7,21 @@
   <form method="POST" action="{{ route('courses.store') }}">
     @csrf
     <label for="name">Name</label>
-    <input type="text" name="name" placeholder="Type a name: " value="{{ old('name', $course->name) }}">
+    <input type="text" name="name" placeholder="Type a name: " value="{{ old('name') }}">
     @error('name')
       <p>*{{ $message }}</p>
     @enderror
     <br>
 
     <label for="description">Description: </label>
-    <textarea name="description" id="" cols="30" rows="10">{{ old('description', $course->description) }}</textarea>
+    <textarea name="description" id="" cols="30" rows="10">{{ old('description') }}</textarea>
     @error('description')
       <p>*{{ $message }}</p>
     @enderror
     <br>
 
     <label for="category">Category</label>
-    <input type="text" name="category" placeholder="Type a category" value="{{ old('category', $course->category) }}">
+    <input type="text" name="category" placeholder="Type a category" value="{{ old('category') }}">
     @error('category')
       <p>*{{ $message }}</p>
     @enderror

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCourseRequest;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -22,15 +23,10 @@ class CourseController extends Controller
         ]);
     }
 
-    public function store(Request $request) {
+    public function store(StoreCourseRequest $request) {
         // dd($request);
-        $formsFields = $request->validate([
-            'name' => 'required|max:20',
-            'description' => 'required',
-            'category' => 'required',
-        ]);
-
-        $course = Course::create($formsFields);
+        $formFields = $request->validated();
+        $course = Course::create($formFields);
 
         // return redirect('/courses');
         return redirect()->route('course.show', $course);
