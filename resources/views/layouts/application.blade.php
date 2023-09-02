@@ -8,6 +8,16 @@
   {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 </head>
 <body>
+  <header>
+    <h1 class="text-xl">Courses</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ route('home') }}">Home</a></li>
+        <li><a href="{{ route('courses.index') }}">Courses</a></li>
+        <li><a href="{{ route('about_us') }}">About us</a></li>
+      </ul>
+    </nav>
+  </header>
   @yield('content')
 </body>
 </html>

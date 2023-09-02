@@ -1,7 +1,7 @@
 @extends('layouts.application')
 
-@section('title', 'Root')
+@section('title', 'About us')
 
 @section('content')
-    <h1>Welcome to the main page</h1>
+    <h1>About us</h1>
 @endsection

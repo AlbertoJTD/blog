@@ -16,7 +16,7 @@ use App\Http\Controllers\CourseController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 // Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 // Route::get('/courses/create', [CourseController::class, 'create'])->name('course.create');
@@ -26,3 +26,5 @@ Route::get('/', function () {
 // Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
 // Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
 Route::resource('courses', CourseController::class);
+
+Route::view('about_us', 'aboutus')->name('about_us');
