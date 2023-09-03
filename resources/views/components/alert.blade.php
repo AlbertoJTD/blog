@@ -1,4 +1,4 @@
-@props(['title', 'type' => 'info'])
+{{-- @props(['title', 'type' => 'info'])
 
 @php
   switch ($type) {
@@ -10,7 +10,7 @@
       $classes = "bg-red-500";
       break;
   }
-@endphp
+@endphp --}}
 
 <div {{ $attributes->merge(['class' => "border-l-4 p-4 $classes"]) }} class="border-l-4 p-4 $classes">
   <h1>{{ $title }}</h1>
