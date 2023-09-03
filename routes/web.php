@@ -1,9 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
-use App\Mail\ContactMailable;
-use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +29,6 @@ Route::get('/', function () {
 Route::resource('courses', CourseController::class);
 
 Route::view('about_us', 'aboutus')->name('about_us');
-Route::get('contact', function() {
-    $email = new ContactMailable;
-    Mail::to('example@mail.com')->send($email);
 
-    return "Message sended";
-});
+Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
