@@ -12,7 +12,7 @@
   }
 @endphp
 
-<div class="{{ $classes }}">
+<div {{ $attributes }} class="{{ $classes }}">
   <h1>{{ $title }}</h1>
   {{ $slot }}
 </div>
