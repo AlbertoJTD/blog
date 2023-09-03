@@ -5,7 +5,11 @@
 @section('content')
     <h1>Welcome to the main page</h1>
 
-    <x-alert type="info">
+    @php
+        $type = 'info';
+    @endphp
+
+    <x-alert :type="$type">
         {{-- secondary slot -> this one does not need a prop in the alert component --}}
         <x-slot name="title">
             This is a title - example 1
