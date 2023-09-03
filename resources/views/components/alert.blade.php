@@ -12,7 +12,7 @@
   }
 @endphp
 
-<div {{ $attributes }} class="{{ $classes }}">
+<div {{ $attributes->merge(['class' => "border-l-4 p-4 $classes"]) }} class="border-l-4 p-4 $classes">
   <h1>{{ $title }}</h1>
   {{ $slot }}
 </div>
